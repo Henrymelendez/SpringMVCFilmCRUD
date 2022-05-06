@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>MVC Films</title>
 </head>
 <body>
-
+<h1>Welcome to the ultimate film database</h1>
+<h4>The films may be fake, but you'll wish they weren't!</h4>
 </body>
 </html>
