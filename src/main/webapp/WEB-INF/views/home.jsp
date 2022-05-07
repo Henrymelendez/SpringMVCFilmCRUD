@@ -12,7 +12,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
+<style>
 
+h1 {
+    text-align:center;
+}
+
+h4 {
+	text-align:center;
+}
+
+h3 {
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+</style>
 
 
 <title>MVC Films</title>
@@ -22,15 +43,14 @@
 <h4>The films may be fake, but you'll wish they weren't!</h4>
 <h3>Menu</h3>
 
-<div class="d-flex align-content-between flex-wrap">
+<div class="d-flex justify-content-evenly container" style="width:800px; margin:0 auto; text-align:center;">
 
 
 
 
 
 
-<button type="button" name="btnlookup" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">Film Look Up</button>
-
+<button type="button" name="btnlookup" id="btnlookup" data-toggle="modal" data-target="#myModal2" class="btn btn-primary mr-auto">Film Look Up</button>
 
 
       <div id="myModal2" class="modal fade">
@@ -99,6 +119,7 @@
 
 
 
+<br>
 
 
 
@@ -116,8 +137,7 @@
 
 
 
-
- <button type="button" name="btnFilm" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Add Film</button>
+ <button type="button" name="btnFilm" data-toggle="modal" data-target="#myModal" class="btn btn-primary split right">Add Film</button>
 
       <div id="myModal" class="modal fade">
      <div class="modal-dialog">
@@ -165,6 +185,7 @@
 
 
 
+</div>
 </div>
 
 </body>
