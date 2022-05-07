@@ -44,37 +44,44 @@
 				<c:choose>
 			<-- Addition returns a boolean, may simply use that boolean here  -->
 					<c:when test="${! empty film}">
-						<h3>The following film has been successfully added to the database: ${film.title}, id: ${film.id }</h3>
+						<h3>The following film has been successfully added to the
+							database: ${film.title}, id: ${film.id }</h3>
 						<form action="update.do">
 							<button name="updateFilm">Update Film</button>
 						</form>
 					</c:when>
 					<c:when test="${! empty actor }">
-						<h3>The following actor has been successfully added to the database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
+						<h3>The following actor has been successfully added to the
+							database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
 						<form action="update.do">
 							<button name="updateActor">Update Actor</button>
 						</form>
 					</c:when>
 				</c:choose>
 				<c:if test="${empty film && empty actor }">
-				<h1>We were unable to complete this update. Return to the <a href="home">homepage</a> to try again</h1>
+					<h1>
+						We were unable to complete this update. Return to the <a
+							href="home">homepage</a> to try again
+					</h1>
 				</c:if>
 			</div>
 		</c:when>
 		<c:when test="${updatingObject == true }">
 			<div name="edit">
-			
+
 				<h3></h3>
 				<c:choose>
 			<--Addition returns a boolean, may simply use that boolean here -->
 					<c:when test="${! empty film}">
-						<h3>The following film has been successfully added to the database: ${film.title}, id: ${film.id }</h3>
+						<h3>The following film has been successfully added to the
+							database: ${film.title}, id: ${film.id }</h3>
 						<form action="update.do">
 							<button name="updateFilm">Update Film</button>
 						</form>
 					</c:when>
 					<c:when test="${! empty actor }">
-						<h3>The following actor has been successfully added to the database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
+						<h3>The following actor has been successfully added to the
+							database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
 						<form action="update.do">
 							<button name="updateActor">Update Actor</button>
 						</form>
@@ -83,7 +90,15 @@
 			</div>
 		</c:when>
 		<c:when test="${deletingObject == true }">
-			<div name="deletion"></div>
+			<div name="deletion">
+				<c:if test="${objectDeletionSuccessful == true }">
+					<h3>Deletion successful</h3>
+				</c:if>
+				<c:if test="${objectDeletionSuccessful == false }">
+					<h3>Something went wrong, and deletion was not successful.Return to the <a
+							href="home">homepage</a> to try again</h3>
+				</c:if>
+			</div>
 		</c:when>
 	</c:choose>
 
