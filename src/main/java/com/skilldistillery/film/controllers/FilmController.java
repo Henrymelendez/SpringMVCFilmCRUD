@@ -47,9 +47,10 @@ public class FilmController {
 	}
 
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.GET)
-	public ModelAndView updateFilmForm(@RequestParam("film") Film film) {
+	public ModelAndView updateFilmForm(@RequestParam("filmId") int filmId) {
 
 		ModelAndView mv = new ModelAndView();
+		Film film = filmDao.findFilmById(filmId);
 		mv.addObject("film", film);
 		mv.setViewName("updateFilm");
 
@@ -59,7 +60,11 @@ public class FilmController {
 	@RequestMapping(path = "updateFilm.do", method= RequestMethod.POST)
 	public ModelAndView updateFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
+		
 		boolean filmUpdated = filmDao.updateFilm(film);
+//		if(filmUpdated) {
+//			System.out.println("The film updated!");
+//		}
 		redir.addFlashAttribute(film);
 		redir.addFlashAttribute(filmUpdated);
 		mv.setViewName("redirect:filmUpdated.do");
