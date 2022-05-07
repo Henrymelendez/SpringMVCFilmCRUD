@@ -24,11 +24,14 @@ public class FilmController {
 		return "home";
 	}
 	
-	@RequestMapping(path = {"/","form.do"})
-	public String addFilmForm() {
+
+	
+	@RequestMapping(path = {"/", "form.do"})
+	public String filmLooKUp() {
 		
-		return "addFilm";
+		return "filmLookup";
 	}
+	
 	
 	//adds film from addFilm.jsp
 	@RequestMapping(path ="add.do", method = RequestMethod.POST)

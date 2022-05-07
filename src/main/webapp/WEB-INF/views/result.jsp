@@ -63,6 +63,7 @@
 		</c:when>
 		<c:when test="${updatingObject == true }">
 			<div name="edit">
+			
 				<h3></h3>
 				<c:choose>
 			<--Addition returns a boolean, may simply use that boolean here -->
