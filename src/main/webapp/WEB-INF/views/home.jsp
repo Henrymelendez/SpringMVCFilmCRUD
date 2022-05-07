@@ -47,34 +47,47 @@
                      <div class="form-group">
                           <label for="inputName" class="form-label">Please Enter a Actor Id</label>
                           <input type="text" class="form-control" name="actorId" />
+                          <button type="submit" class="btn btn-primary">Submit</button>
                  </div>
                  </div>
                  
+                 
+                 </form>
+                 
+                  <form  class="form-horizontal" role="" method="GET" action="lookup.do">
+                  <div class="modal-header modal-header-warning">
                   <div class="modal-body"> 
                      <div class="form-group">
                           <label for="inputName" class="form-label">Please Enter a Film id</label>
                           <input type="text" class="form-control" name="filmId" ></input>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
                  </div>
-                  
                  </div>
+                 </form>
                  
+                 
+                 
+                  <form  class="form-horizontal" role="" method="GET" action="lookup.do">
+                  <div class="modal-header modal-header-warning">
                     <div class="modal-body"> 
                      <div class="form-group">
                           <label for="inputName" class="form-label">Find Film by key word</label>
-                          <input type="number" class="form-control" name="query"></input>
-                   
+                          <input type="text" class="form-control" name="query"></input>
+                   			<button type="submit" class="btn btn-primary">Submit</button>
                  </div> 
                  </div>
                  
-               
+               </div>
+               </form>
                  
                  
                     
                  <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
                  </div>
-            </form>
+            
         </div>
    </div>
 

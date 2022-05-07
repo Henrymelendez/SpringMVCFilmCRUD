@@ -1,5 +1,7 @@
 package com.skilldistillery.film.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.film.dao.FilmDAO;
+import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
@@ -97,11 +100,9 @@ public class FilmController {
 	}
 
 	// Story 1 Find Film by Id
-<<<<<<< HEAD
+
 	@RequestMapping(path ="lookup.do", params = "filmId",  method = RequestMethod.GET)
-=======
-	@RequestMapping(path = "findByFilmId.do", method = RequestMethod.GET)
->>>>>>> 14626b54f685245a75d0731e60a3721a211839fc
+
 	public ModelAndView FindByFilmId(String filmId) {
 		ModelAndView mv = new ModelAndView();
 		Film film = filmDao.findFilmById(Integer.parseInt(filmId));
@@ -109,6 +110,19 @@ public class FilmController {
 
 		mv.addObject("film", film);
 		mv.setViewName("result");
+		return mv;
+	}
+	
+	
+	// Find film by actor Id 
+	@RequestMapping(path = "lookup.do", params = "query", method = RequestMethod.GET)
+	public ModelAndView getActorById(String query) {
+		ModelAndView mv = new ModelAndView();
+		List<Film> films = filmDao.findFilmsByQuery(query);
+		mv.addObject("usingLookup",true);
+		mv.addObject("films", films);
+		mv.setViewName("result");
+		
 		return mv;
 	}
 
