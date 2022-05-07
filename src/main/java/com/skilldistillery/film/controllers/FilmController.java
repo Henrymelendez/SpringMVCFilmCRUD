@@ -18,11 +18,13 @@ public class FilmController {
 	@RequestMapping(path= {"/", "home.do"})
 	public String home() {
 		
-		return "WEB-INF/views/home.jsp";
+		return "home";
 	}
 	
-	@RequestMapping(path ="form.do", method = RequestMethod.GET)
+	@RequestMapping(path ="lookup.do", method = RequestMethod.GET)
 	public ModelAndView formSelector() {
+		
+	
 		ModelAndView mv = new ModelAndView();
 		
 		
