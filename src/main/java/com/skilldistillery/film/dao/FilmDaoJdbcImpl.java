@@ -176,7 +176,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		return actor;
 	}
 
-	public int createFilm(Film film) {
+	public Film createFilm(Film film) {
 		String insertFilm = "INSERT INTO film (title, description, language_id)" + "VALUES (?, ?, 1)";
 		Connection conn = null;
 		try {
@@ -204,7 +204,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 			conn.commit();
-			return film.getId();
+			return film;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			if (conn != null) {

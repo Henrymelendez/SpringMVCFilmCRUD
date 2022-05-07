@@ -27,32 +27,40 @@ public class FilmController {
 	
 
 	
-	@RequestMapping(path = {"/", "form.do"})
+	@RequestMapping(path = {"/", "form.do"} ,params = "lookup" )
 	public String filmLooKUp() {
 		
 		return "filmLookup";
 	}
 	
 	
+	
+	
+	
+	
 	//adds film from addFilm.jsp
 	@RequestMapping(path ="add.do", method = RequestMethod.POST)
 	public ModelAndView addFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		filmDao.createFilm(film);
-		redir.addFlashAttribute("films", film);
+		film = filmDao.createFilm(film);
+		mv.addObject("usingLookup",true);
+		redir.addFlashAttribute("film", film);
+		
 		mv.setViewName("redirect:filmAdded.do");
 		
 		
 		return mv;
 	}
-//use redirect when adding/deleting/editing film
+
 	
 	
 	
 	// redirect when film is added 
-	@RequestMapping(path = "filmAdded.do")
+	@RequestMapping(path = "filmAdded.do",method=RequestMethod.GET)
 	public ModelAndView createdFilm() {
 		ModelAndView mv = new ModelAndView();
+
+		mv.addObject("addingObject", true);
 		mv.setViewName("result");
 		return mv;
 	}
@@ -64,10 +72,8 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
 		mv.addObject("usingLookup",true);
-<<<<<<< HEAD
+
 		mv.addObject("film", film);
-=======
->>>>>>> 5ff4e2c84b0d2dc57a7129b8654ce061adfdf4db
 		mv.setViewName("result");
 		return mv;
 	}
