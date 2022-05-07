@@ -27,7 +27,8 @@
 						<p>${film}</p>
 						
 						<form action="updateFilm.do" method="get">
-							<button name="film" value="${film}">Update Film</button>
+						<input type="text" hidden="true" name="film" value="${film}">
+							<button>Update Film</button>
 						</form>
 						<form action="delete.do">
 						<input type="text" hidden="true" name="id" value="${film.id }">
@@ -72,19 +73,23 @@
 
 				<h3></h3>
 				<c:choose>
-					<c:when test="${! empty film}">
+					<c:when test="${filmUpdated == true}">
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
 						<form action="update.do">
 							<button name="updateFilm">Update Film</button>
 						</form>
 					</c:when>
-					<c:when test="${! empty actor }">
+					<c:when test="${actorUpdated == true }">
 						<h3>The following actor has been successfully added to the
 							database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
 						<form action="update.do">
 							<button name="updateActor">Update Actor</button>
 						</form>
+					</c:when>
+					<c:when test="${filmUpdated == false && actorUpdated == false }">
+					<h3>Update failed return to <a
+							href="home.do">homepage</a> to try again.</h3>
 					</c:when>
 				</c:choose>
 			</div>

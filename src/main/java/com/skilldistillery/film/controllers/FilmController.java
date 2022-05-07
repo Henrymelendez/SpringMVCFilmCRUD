@@ -18,23 +18,20 @@ public class FilmController {
 
 	@Autowired
 	private FilmDAO filmDao;
-	
-	
-	@RequestMapping(path= {"/", "home.do"})
+
+	@RequestMapping(path = { "/", "home.do" })
 	public String home() {
-		
+
 		return "home";
 	}
-	
 
-	
-	@RequestMapping(path = {"/", "form.do"} ,params = "lookup" )
+	@RequestMapping(path = { "/", "form.do" }, params = "lookup")
 	public String filmLooKUp() {
-		
+
 		return "filmLookup";
 	}
-	
-	@RequestMapping(path ="delete.do", method = RequestMethod.GET)
+
+	@RequestMapping(path = "delete.do", method = RequestMethod.GET)
 	public ModelAndView deleteFilm(Film film, @RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		film.setId(id);
@@ -45,39 +42,52 @@ public class FilmController {
 		mv.setViewName("result");
 		return mv;
 	}
-	
-	
-@RequestMapping(path ="updateFilm.do", method = RequestMethod.GET)
-public ModelAndView updateFilm(Film film) {
-	
-	ModelAndView mv = new ModelAndView();
-	mv.addObject("film", film);
-	mv.setViewName("updateFilm");
-	
-	return mv;
-}
-	
-	
-	
-	//adds film from addFilm.jsp
-	@RequestMapping(path ="add.do", method = RequestMethod.POST)
-	public ModelAndView addFilm(Film film, RedirectAttributes redir) {
+
+	@RequestMapping(path = "updateFilm.do", method = RequestMethod.GET)
+	public ModelAndView updateFilmForm(@RequestParam("film") Film film) {
+
 		ModelAndView mv = new ModelAndView();
-		film = filmDao.createFilm(film);
-		mv.addObject("usingLookup",true);
-		redir.addFlashAttribute("film", film);
-		
-		mv.setViewName("redirect:filmAdded.do");
-		
+		mv.addObject("film", film);
+		mv.setViewName("updateFilm");
+
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateFilm.do", method= RequestMethod.POST)
+	public ModelAndView updateFilm(Film film, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		boolean filmUpdated = filmDao.updateFilm(film);
+		redir.addFlashAttribute(film);
+		redir.addFlashAttribute(filmUpdated);
+		mv.setViewName("redirect:filmUpdated.do");
+		return mv;
+	}
+	
+	@RequestMapping(path = "filmUpdated.do", method = RequestMethod.GET)
+	public ModelAndView filmUpdated() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("updatingObject", true);
+		mv.setViewName("result");
 		
 		return mv;
 	}
+	
+	
+	// adds film from addFilm.jsp
+	@RequestMapping(path = "add.do", method = RequestMethod.POST)
+	public ModelAndView addFilm(Film film, RedirectAttributes redir) {
+		ModelAndView mv = new ModelAndView();
+		film = filmDao.createFilm(film);
+		mv.addObject("usingLookup", true);
+		redir.addFlashAttribute("film", film);
 
-	
-	
-	
-	// redirect when film is added 
-	@RequestMapping(path = "filmAdded.do",method=RequestMethod.GET)
+		mv.setViewName("redirect:filmAdded.do");
+
+		return mv;
+	}
+
+	// redirect when film is added
+	@RequestMapping(path = "filmAdded.do", method = RequestMethod.GET)
 	public ModelAndView createdFilm() {
 		ModelAndView mv = new ModelAndView();
 
@@ -85,20 +95,17 @@ public ModelAndView updateFilm(Film film) {
 		mv.setViewName("result");
 		return mv;
 	}
-	
-	
+
 	// Story 1 Find Film by Id
-	@RequestMapping(path ="findByFilmId.do",  method = RequestMethod.GET)
+	@RequestMapping(path = "findByFilmId.do", method = RequestMethod.GET)
 	public ModelAndView FindByFilmId(String filmId) {
 		ModelAndView mv = new ModelAndView();
-		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
-		mv.addObject("usingLookup",true);
+		Film film = filmDao.findFilmById(Integer.parseInt(filmId));
+		mv.addObject("usingLookup", true);
 
 		mv.addObject("film", film);
 		mv.setViewName("result");
 		return mv;
 	}
-	
-	
 
 }
