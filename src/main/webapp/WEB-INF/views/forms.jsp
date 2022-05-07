@@ -26,6 +26,6 @@
 
 <form></form>
 
-<a href="/WEB-INF/views/home.jsp">Return Home</a>
+<a href="home">Return Home</a>
 </body>
 </html>
