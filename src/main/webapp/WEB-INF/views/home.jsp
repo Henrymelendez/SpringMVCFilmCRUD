@@ -58,8 +58,20 @@
                      <div class="form-group">
                           <label for="inputName" class="form-label">Description</label>
                           <textarea type="text" class="form-control" name="description" required="required"></textarea>
+                 </div>
+                  
+                 </div>
+                 
+                    <div class="modal-body"> 
+                     <div class="form-group">
+                          <label for="inputName" class="form-label">Release Year</label>
+                          <input type="number" class="form-control" name="releaseYear" required="required"></input>
                  </div> 
                  </div>
+                 
+               
+                 
+                 
                     
                  <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

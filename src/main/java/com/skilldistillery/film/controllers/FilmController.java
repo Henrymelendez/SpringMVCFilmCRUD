@@ -3,6 +3,7 @@ package com.skilldistillery.film.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -53,5 +54,18 @@ public class FilmController {
 		mv.setViewName("result");
 		return mv;
 	}
+	
+	
+	// Story 1 Find Film by Id
+	@RequestMapping(path ="findByFilmId.do",  method = RequestMethod.GET)
+	public ModelAndView FindByFilmId(String filmId) {
+		ModelAndView mv = new ModelAndView();
+		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
+		mv.addObject("usingLookup",film);
+		mv.setViewName("result");
+		return mv;
+	}
+	
+	
 
 }
