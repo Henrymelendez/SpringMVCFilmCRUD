@@ -13,5 +13,7 @@ public interface FilmDAO {
 	  public List<Film> findFilmsByQuery(String query);
 	  public Film createFilm(Film film);
 	  public boolean deleteFilm(Film film); 
+	  public boolean updateFilm(Film film);
+	  public boolean updateActor(Actor actor);
 
 }

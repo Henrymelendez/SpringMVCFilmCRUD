@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form name="updateFilm" action="update.do">
+	<form name="updateFilm" action="updateFilm.do" method="post">
 			
 		<h3> Editing film with ID: ${film.id} </h3>	
 		
@@ -21,16 +21,16 @@
 		<label value="releaseYear"> Release Year: </label> <input type="text" name="releaseYear"
 			value="releaseYear"> </input> <br>
 			
-		<label for="language" id=> Language: </label>			
+		<label for="language" id="language"> Language: </label>			
 			<select name="language">
 			  <option id="language" value="English">English</option>
 			  <option id="language" value="Italian">Italian</option>
 			  <option id="language" value="Japanese">Japanese</option>
-			  <option id="language" value="Manderine">Manderine</option>
+			  <option id="language" value="Mandarin">Mandarin</option>
 			  <option id="language" value="French">French</option>
 			  <option id="language" value="German">German</option>
 		</select>
-			
+		<button type="submit">Submit</button>
 	</form>
 
 </body>
