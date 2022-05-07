@@ -53,26 +53,26 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 						rs.getDouble("rental_rate"), rs.getInt("length"), rs.getDouble("replacement_cost"),
 						rs.getString("rating"), rs.getString("special_features"));
 				film.setLanguage(rs.getNString("language.name"));
-				List<String> inventory = new ArrayList<>();
-				inventoryPst.setInt(1, filmId);
-				rs = inventoryPst.executeQuery();
-				while (rs.next()) {
-					String inventoryItem = "Copy #" + rs.getInt("inventory_item.id") + ", condition - "
-							+ rs.getNString("inventory_item.media_condition");
-					inventory.add(inventoryItem);
-				}
-				film.setInventory(inventory);
+//				List<String> inventory = new ArrayList<>();
+//				inventoryPst.setInt(1, filmId);
+//				rs = inventoryPst.executeQuery();
+//				while (rs.next()) {
+//					String inventoryItem = "Copy #" + rs.getInt("inventory_item.id") + ", condition - "
+//							+ rs.getNString("inventory_item.media_condition");
+//					inventory.add(inventoryItem);
+//				}
+//				film.setInventory(inventory);
 				List<Actor> filmActors = new ArrayList<>();
 				actorPst.setInt(1, filmId);
 				rs = actorPst.executeQuery();
 				while (rs.next()) {
 					filmActors.add(new Actor(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name")));
 				}
-				film.setActors(filmActors);
+				film.setActor(filmActors);
 				catPst.setInt(1, filmId);
 				rs = catPst.executeQuery();
 				if (rs.next()) {
-					film.setCategory(rs.getNString("category.name"));
+//					film.setCategory(rs.getNString("category.name"));
 				}
 
 			}
@@ -115,12 +115,12 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 					filmActors.add(new Actor(resultPlus.getInt("id"), resultPlus.getString("first_name"),
 							resultPlus.getString("last_name")));
 				}
-				film.setActors(filmActors);
+				film.setActor(filmActors);
 
 				catPst.setInt(1, film.getId());
 				resultPlus = catPst.executeQuery();
 				if (resultPlus.next()) {
-					film.setCategory(resultPlus.getNString("category.name"));
+//					film.setCategory(resultPlus.getNString("category.name"));
 				}
 				List<String> inventory = new ArrayList<>();
 				inventoryPst.setInt(1, film.getId());
@@ -130,7 +130,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 							+ resultPlus.getNString("inventory_item.media_condition");
 					inventory.add(inventoryItem);
 				}
-				film.setInventory(inventory);
+//				film.setInventory(inventory);
 				films.add(film);
 
 				resultPlus.close();
@@ -192,15 +192,15 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				if (rs.next()) {
 					int newFilmId = rs.getInt(1);
 					film.setId(newFilmId);
-//					if (film.getActors() != null && film.getActors().size() > 0) {
-//						String buildFilmActor = "INSERT INTO film_actor(film_id, actor_id) VALUES ( ?, ?)";
-//						insertStatement = conn.prepareStatement(buildFilmActor);
-//						insertStatement.setInt(1, film.getId());
-//						for (Actor actor : film.getActors()) {
-//							insertStatement.setInt(2, actor.getId());
-//							insertStatement.executeUpdate();
-//						}
-//					}
+					if (film.getActor() != null && film.getActor().size() > 0) {
+						String buildFilmActor = "INSERT INTO film_actor(film_id, actor_id) VALUES ( ?, ?)";
+						insertStatement = conn.prepareStatement(buildFilmActor);
+						insertStatement.setInt(1, film.getId());
+						for (Actor actor : film.getActor()) {
+							insertStatement.setInt(2, actor.getId());
+							insertStatement.executeUpdate();
+						}
+					}
 				}
 			}
 			conn.commit();

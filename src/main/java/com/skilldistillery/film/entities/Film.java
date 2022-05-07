@@ -21,6 +21,14 @@ public class Film {
 	
 	public Film() {}
 	
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
 			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
 		super();
@@ -35,20 +43,13 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
-		if (languageId == 1) {
-			this.language = "English"; }
-		if (languageId ==2) {
-			this.language = "Itilian"; }
-		if (languageId ==3) {
-			this.language = "Japanese"; }
-		if (languageId == 4) {
-			this.language = "Manderin"; }
-		if (languageId == 5) {
-			this.language = "French"; }
-		if (languageId == 6) { 
-			this.language = "German"; }		
 		}
 	
+	
+
+	public void setLanguageId(int languageId) {
+		this.languageId = languageId;
+	}
 
 	public int getId() {
 		return id;
@@ -78,22 +79,7 @@ public class Film {
 	public int getLanguageId() {
 		return languageId;
 	}
-	public void setLanguageId(int languageId) {
-		this.languageId = languageId;
-		if (languageId == 1) {
-			this.language = "English"; }
-		if (languageId ==2) {
-			this.language = "Itilian"; }
-		if (languageId ==3) {
-			this.language = "Japanese"; }
-		if (languageId == 4) {
-			this.language = "Manderin"; }
-		if (languageId == 5) {
-			this.language = "French"; }
-		if (languageId == 6) { 
-			this.language = "German"; }		
-		
-	}
+
 	public int getRentalDuration() {
 		return rentalDuration;
 	}
