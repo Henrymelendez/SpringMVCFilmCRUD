@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -33,8 +34,28 @@ public class FilmController {
 		return "filmLookup";
 	}
 	
+	@RequestMapping(path ="delete.do", method = RequestMethod.GET)
+	public ModelAndView deleteFilm(Film film, @RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
+		film.setId(id);
+		System.out.println(film.getId());
+		boolean filmDeleted = filmDao.deleteFilm(film);
+		mv.addObject("deletingObject", true);
+		mv.addObject("objectDeleted", filmDeleted);
+		mv.setViewName("result");
+		return mv;
+	}
 	
 	
+@RequestMapping(path ="updateFilm.do", method = RequestMethod.GET)
+public ModelAndView updateFilm(Film film) {
+	
+	ModelAndView mv = new ModelAndView();
+	mv.addObject("film", film);
+	mv.setViewName("updateFilm");
+	
+	return mv;
+}
 	
 	
 	

@@ -26,11 +26,12 @@
 					<c:when test="${! empty film }">
 						<p>${film}</p>
 						
-						<form action="update.do">
-							<button name="updateFilm">Update Film</button>
+						<form action="updateFilm.do" method="get">
+							<button name="film" value="${film}">Update Film</button>
 						</form>
 						<form action="delete.do">
-							<button name="deleteFilm" value="${film.id}">Delete Film</button>
+						<input type="text" hidden="true" name="id" value="${film.id }">
+							<button value="${film}">Delete Film</button>
 						</form>
 					</c:when>
 				</c:choose>
@@ -90,10 +91,10 @@
 		</c:when>
 		<c:when test="${deletingObject == true }">
 			<div name="deletion">
-				<c:if test="${objectDeletionSuccessful == true }">
+				<c:if test="${objectDeleted == true }">
 					<h3>Deletion successful</h3>
 				</c:if>
-				<c:if test="${objectDeletionSuccessful == false }">
+				<c:if test="${objectDeleted == false }">
 					<h3>Something went wrong, and deletion was not successful.Return to the <a
 							href="home.do">homepage</a> to try again</h3>
 				</c:if>
