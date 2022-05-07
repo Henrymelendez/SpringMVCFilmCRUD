@@ -3,6 +3,8 @@ package com.skilldistillery.film.entities;
 import java.util.List;
 import java.util.Objects;
 
+import com.skilldistillery.film.entities.Actor;
+
 public class Film {
 	
 	private int id;
@@ -45,7 +47,25 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 		}
 	
-	
+	public void showDetails() {
+		System.out.println(this.title + ":");
+		System.out.println(this.description);
+//		System.out.println("Category: " + this.category);
+		System.out.println("Release Year: " + this.releaseYear +", Rating: " + this.rating + ", Language: " +this.language);
+		System.out.println("Film Length: " + this.length + " mins");
+		System.out.println("Special Features: " + this.specialFeatures);
+		System.out.println("Rental rate: " + this.rentalRate + ", Replacement Cost: " + this.replacementCost + ", Rental Duration: " + this.rentalDuration );
+//		System.out.println("The following copies are in inventory: ");
+//		for (String inventoryItem : inventory) {
+//			System.out.println(inventoryItem);
+//		}
+	}
+	public void showActors() {
+		System.out.println("caste: ");
+		for (Actor actor : actor) {
+			System.out.println(actor);
+		}
+	}
 
 	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
@@ -146,7 +166,7 @@ public class Film {
 	@Override
 	public String toString() {
 		return "Film Title: " + title + " Year Released: " + releaseYear + " Rating: " + 
-				rating +" Description" + description + " Language: " + language + " cast: " + actor;
+				rating +" Description" + description + " Language: " + language;
 			
 	}
 	
