@@ -64,7 +64,10 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
 		mv.addObject("usingLookup",true);
+<<<<<<< HEAD
 		mv.addObject("film", film);
+=======
+>>>>>>> 5ff4e2c84b0d2dc57a7129b8654ce061adfdf4db
 		mv.setViewName("result");
 		return mv;
 	}
