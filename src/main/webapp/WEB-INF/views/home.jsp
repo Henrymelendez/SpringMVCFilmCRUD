@@ -25,9 +25,81 @@
 <div class="d-flex align-content-between flex-wrap">
 
 
-<form action="form.do" value="lookup" >
-<button name="lookup" class="btn btn-primary">Film Lookup</button>
-</form>
+
+
+
+
+<button type="button" name="btnlookup" data-toggle="modal" data-target="#myModal2" class="btn btn-primary">Film Look Up</button>
+
+
+
+      <div id="myModal2" class="modal fade">
+     <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <form  class="form-horizontal" role="" method="GET" action="lookup.do">
+                  <div class="modal-header modal-header-warning">
+                      <button type="button" class="close" data-dismiss="modal2" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title ">Please Enter Look Up Info</h4>
+                  </div>
+
+                  <div class="modal-body"> 
+                     <div class="form-group">
+                          <label for="inputName" class="form-label">Please Enter a Actor Id</label>
+                          <input type="text" class="form-control" name="actorId" />
+                 </div>
+                 </div>
+                 
+                  <div class="modal-body"> 
+                     <div class="form-group">
+                          <label for="inputName" class="form-label">Please Enter a Film id</label>
+                          <input type="text" class="form-control" name="filmId" ></input>
+                 </div>
+                  
+                 </div>
+                 
+                    <div class="modal-body"> 
+                     <div class="form-group">
+                          <label for="inputName" class="form-label">Find Film by key word</label>
+                          <input type="number" class="form-control" name="query"></input>
+                   
+                 </div> 
+                 </div>
+                 
+               
+                 
+                 
+                    
+                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                 </div>
+            </form>
+        </div>
+   </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

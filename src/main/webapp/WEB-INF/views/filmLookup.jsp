@@ -28,7 +28,7 @@
 <br>
 
 <div>
-<form action="findByFilmId.do">
+<form action="lookup.do">
 <label for="filmId">Find By Film Id</label>
 <input type="text" name="filmId">
 <button type="submit">Submit</button>

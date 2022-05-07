@@ -88,7 +88,7 @@ public ModelAndView updateFilm(Film film) {
 	
 	
 	// Story 1 Find Film by Id
-	@RequestMapping(path ="findByFilmId.do",  method = RequestMethod.GET)
+	@RequestMapping(path ="lookup.do", params = "filmId",  method = RequestMethod.GET)
 	public ModelAndView FindByFilmId(String filmId) {
 		ModelAndView mv = new ModelAndView();
 		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
