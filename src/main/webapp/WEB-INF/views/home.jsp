@@ -24,9 +24,6 @@
 
 <div class="d-flex align-content-between flex-wrap">
 
-<form action="form.do">
-<button name="delete" class="btn btn-success">Delete Film</button>
-</form>
 
 <form action="form.do" value="lookup" >
 <button name="lookup" class="btn btn-primary">Film Lookup</button>
