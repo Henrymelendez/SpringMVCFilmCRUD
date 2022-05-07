@@ -39,13 +39,15 @@ public class FilmController {
 	public ModelAndView addFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		filmDao.createFilm(film);
-		redir.addFlashAttribute("addingObject", film);
+		redir.addFlashAttribute("films", film);
 		mv.setViewName("redirect:filmAdded.do");
 		
 		
 		return mv;
 	}
 //use redirect when adding/deleting/editing film
+	
+	
 	
 	// redirect when film is added 
 	@RequestMapping(path = "filmAdded.do")
@@ -61,7 +63,8 @@ public class FilmController {
 	public ModelAndView FindByFilmId(String filmId) {
 		ModelAndView mv = new ModelAndView();
 		Film film  = filmDao.findFilmById(Integer.parseInt(filmId));
-		mv.addObject("usingLookup",film);
+		mv.addObject("usingLookup",true);
+		mv.addObject("film", film);
 		mv.setViewName("result");
 		return mv;
 	}

@@ -29,7 +29,7 @@
 </form>
 
 <form action="form.do" >
-<button name="lookup" class="btn btn-success">Film Lookup</button>
+<button name="lookup" class="btn btn-primary">Film Lookup</button>
 </form>
 
 
