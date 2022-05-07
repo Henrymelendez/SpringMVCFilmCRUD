@@ -103,9 +103,9 @@ public class FilmController {
 
 	@RequestMapping(path ="lookup.do", params = "filmId",  method = RequestMethod.GET)
 
-	public ModelAndView FindByFilmId(String filmId) {
+	public ModelAndView FindByFilmId(int filmId) {
 		ModelAndView mv = new ModelAndView();
-		Film film = filmDao.findFilmById(Integer.parseInt(filmId));
+		Film film = filmDao.findFilmById(filmId);
 		mv.addObject("usingLookup", true);
 
 		mv.addObject("film", film);

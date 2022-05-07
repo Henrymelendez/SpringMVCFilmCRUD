@@ -16,8 +16,12 @@
 						<h3>The following film(s) match your query</h3>
 						<ul>
 							<c:forEach var="film" items="${films}">
-								<li><a href="updateFilm?filmId=${film.id}" value="film"
-									name="film">${film.title}</a></li>
+								<li>
+									<form action="lookup.do" method="get">
+										<input type="text" hidden="true" name="filmId" value="${film.id}">
+										<input type="submit" value="${film.title}">
+									</form>
+								</li>
 							</c:forEach>
 						</ul>
 						<h3>Select a film to view more information, delete, or update
@@ -25,13 +29,13 @@
 					</c:when>
 					<c:when test="${! empty film }">
 						<p>${film}</p>
-						
+
 						<form action="updateFilm.do" method="get">
-						<input type="text" hidden="true" name="film" value="${film}">
+							<input type="text" hidden="true" name="film" value="${film}">
 							<button>Update Film</button>
 						</form>
 						<form action="delete.do">
-						<input type="text" hidden="true" name="id" value="${film.id }">
+							<input type="text" hidden="true" name="id" value="${film.id }">
 							<button value="${film}">Delete Film</button>
 						</form>
 					</c:when>
@@ -44,7 +48,7 @@
 		<c:when test="${addingObject == true }">
 			<div name="addition">
 				<c:choose>
-			
+
 					<c:when test="${! empty film}">
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
@@ -88,8 +92,10 @@
 						</form>
 					</c:when>
 					<c:when test="${filmUpdated == false && actorUpdated == false }">
-					<h3>Update failed return to <a
-							href="home.do">homepage</a> to try again.</h3>
+						<h3>
+							Update failed return to <a href="home.do">homepage</a> to try
+							again.
+						</h3>
 					</c:when>
 				</c:choose>
 			</div>
@@ -100,8 +106,10 @@
 					<h3>Deletion successful</h3>
 				</c:if>
 				<c:if test="${objectDeleted == false }">
-					<h3>Something went wrong, and deletion was not successful.Return to the <a
-							href="home.do">homepage</a> to try again</h3>
+					<h3>
+						Something went wrong, and deletion was not successful.Return to
+						the <a href="home.do">homepage</a> to try again
+					</h3>
 				</c:if>
 			</div>
 		</c:when>
