@@ -71,7 +71,6 @@
 
 				<h3></h3>
 				<c:choose>
-			<--Addition returns a boolean, may simply use that boolean here -->
 					<c:when test="${! empty film}">
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
