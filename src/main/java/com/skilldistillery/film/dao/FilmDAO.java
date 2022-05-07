@@ -15,5 +15,6 @@ public interface FilmDAO {
 	  public boolean deleteFilm(Film film); 
 	  public boolean updateFilm(Film film);
 	  public boolean updateActor(Actor actor);
+	  public List<Actor> listActors();
 
 }

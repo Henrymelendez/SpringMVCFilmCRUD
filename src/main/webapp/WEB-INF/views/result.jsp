@@ -4,6 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Results</title>
 </head>
@@ -18,8 +25,9 @@
 							<c:forEach var="film" items="${films}">
 								<li>
 									<form action="lookup.do" method="get">
-										<input type="text" hidden="true" name="filmId" value="${film.id}">
-										<input type="submit" value="${film.title}">
+										<input type="text" hidden="true" name="filmId"
+											value="${film.id}"> <input type="submit"
+											value="${film.title}">
 									</form>
 								</li>
 							</c:forEach>
@@ -31,8 +39,8 @@
 						<p>${film}</p>
 
 						<form action="updateFilm.do" method="get">
-							<input type="text" hidden="true" name="film" value="${film}">
-							<button>Update Film</button>
+							<input type="text" hidden="true" name="filmId" value="${film.id}">
+							<button value=${film}">Update Film</button>
 						</form>
 						<form action="delete.do">
 							<input type="text" hidden="true" name="id" value="${film.id }">
@@ -59,9 +67,6 @@
 					<c:when test="${! empty actor }">
 						<h3>The following actor has been successfully added to the
 							database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
-						<form action="update.do">
-							<button name="updateActor">Update Actor</button>
-						</form>
 					</c:when>
 				</c:choose>
 				<c:if test="${empty film && empty actor }">
@@ -70,34 +75,6 @@
 							href="home.do">homepage</a> to try again
 					</h1>
 				</c:if>
-			</div>
-		</c:when>
-		<c:when test="${updatingObject == true }">
-			<div name="edit">
-
-				<h3></h3>
-				<c:choose>
-					<c:when test="${filmUpdated == true}">
-						<h3>The following film has been successfully added to the
-							database: ${film.title}, id: ${film.id }</h3>
-						<form action="update.do">
-							<button name="updateFilm">Update Film</button>
-						</form>
-					</c:when>
-					<c:when test="${actorUpdated == true }">
-						<h3>The following actor has been successfully added to the
-							database: ${actor.firstName} ${actor.lastName}, id: ${actor.id }</h3>
-						<form action="update.do">
-							<button name="updateActor">Update Actor</button>
-						</form>
-					</c:when>
-					<c:when test="${filmUpdated == false && actorUpdated == false }">
-						<h3>
-							Update failed return to <a href="home.do">homepage</a> to try
-							again.
-						</h3>
-					</c:when>
-				</c:choose>
 			</div>
 		</c:when>
 		<c:when test="${deletingObject == true }">
@@ -109,6 +86,27 @@
 					<h3>
 						Something went wrong, and deletion was not successful.Return to
 						the <a href="home.do">homepage</a> to try again
+					</h3>
+				</c:if>
+			</div>
+		</c:when>
+		<c:when test="${updatingObject == true }">
+			<div name="edit">
+				<c:choose>
+					<c:when test="${filmUpdated == true}">
+						<h3>The following film has been successfully updated to the
+							database: </h3>
+							<h3>${film.title} ${film.id }</h3>
+					</c:when>
+					<c:when test="${actorUpdated == true }">
+						<h3>The following actor has been successfully added to the
+							database: ${actor.firstName} ${actor.lastName} id: ${actor.id }</h3>
+					</c:when>
+				</c:choose>
+				<c:if test="${filmUpdated == false || actorUpdated == false }">
+					<h3>
+						Update failed return to <a href="home.do">homepage</a> to try
+						again.
 					</h3>
 				</c:if>
 			</div>

@@ -20,7 +20,16 @@ public class Film {
 	private String specialFeatures;
 	private List<Actor> actor;
 	private String language;
+	private String category;
 	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public Film() {}
 	
 	public String getLanguage() {
