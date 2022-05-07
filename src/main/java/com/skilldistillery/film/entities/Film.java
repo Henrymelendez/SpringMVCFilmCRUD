@@ -30,6 +30,8 @@ public class Film {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
+	
+	
 
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
 			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
@@ -60,12 +62,12 @@ public class Film {
 //			System.out.println(inventoryItem);
 //		}
 	}
-	public void showActors() {
-		System.out.println("caste: ");
-		for (Actor actor : actor) {
-			System.out.println(actor);
-		}
-	}
+//	public void showActors() {
+//		System.out.println("caste: ");
+//		for (Actor actor : actor) {
+//			System.out.println(actor);
+//		}
+//	}
 
 	public void setLanguageId(int languageId) {
 		this.languageId = languageId;

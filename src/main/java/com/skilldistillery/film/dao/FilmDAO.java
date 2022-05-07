@@ -11,7 +11,7 @@ public interface FilmDAO {
 	  public Actor findActorById(int actorId);
 	//  public List<Actor> findActorsByFilmId(int filmId);
 	  public List<Film> findFilmsByQuery(String query);
-	  public int createFilm(Film film);
+	  public Film createFilm(Film film);
 	  public boolean deleteFilm(Film film); 
 
 }

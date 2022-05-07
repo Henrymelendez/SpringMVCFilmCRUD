@@ -176,7 +176,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		return actor;
 	}
 
-	public int createFilm(Film film) {
+	public Film createFilm(Film film) {
 		String insertFilm = "INSERT INTO film (title, description, language_id)" + "VALUES (?, ?, 1)";
 		Connection conn = null;
 		try {
@@ -204,7 +204,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 			conn.commit();
-			return film.getId();
+			return film;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			if (conn != null) {
@@ -220,6 +220,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 
 	public boolean deleteFilm(Film film) {
 		Connection conn = null;
+		
 		try {
 			conn = DriverManager.getConnection(URL, user, pw);
 			conn.setAutoCommit(false); // START TRANSACTION
@@ -231,6 +232,10 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, film.getId());
 			updateCount = stmt.executeUpdate();
+//			ResultSet keys = stmt.getGeneratedKeys();
+//			while (keys.next()) {
+//				System.out.println("deleted film id" + keys.getInt(1));
+//			}
 			conn.commit(); // COMMIT TRANSACTION
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
@@ -242,7 +247,8 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				}
 			}
 			return false;
-		}
+		} 
+		
 		return true;
 	}
 

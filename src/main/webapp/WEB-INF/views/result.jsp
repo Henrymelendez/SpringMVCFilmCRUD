@@ -24,13 +24,14 @@
 							information</h3>
 					</c:when>
 					<c:when test="${! empty film }">
-						<p>${film }
-							<br> ${film.showActors}<br>${film.showDetails}</p>
-						<form action="update.do">
-							<button name="updateFilm">Update Film</button>
+						<p>${film}</p>
+						
+						<form action="updateFilm.do" method="get">
+							<button name="film" value="${film}">Update Film</button>
 						</form>
 						<form action="delete.do">
-							<button name="deleteFilm" value="${film.id}">Delete Film</button>
+						<input type="text" hidden="true" name="id" value="${film.id }">
+							<button value="${film}">Delete Film</button>
 						</form>
 					</c:when>
 				</c:choose>
@@ -42,7 +43,7 @@
 		<c:when test="${addingObject == true }">
 			<div name="addition">
 				<c:choose>
-			<-- Addition returns a boolean, may simply use that boolean here  -->
+			
 					<c:when test="${! empty film}">
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
@@ -61,7 +62,7 @@
 				<c:if test="${empty film && empty actor }">
 					<h1>
 						We were unable to complete this update. Return to the <a
-							href="home">homepage</a> to try again
+							href="home.do">homepage</a> to try again
 					</h1>
 				</c:if>
 			</div>
@@ -90,17 +91,17 @@
 		</c:when>
 		<c:when test="${deletingObject == true }">
 			<div name="deletion">
-				<c:if test="${objectDeletionSuccessful == true }">
+				<c:if test="${objectDeleted == true }">
 					<h3>Deletion successful</h3>
 				</c:if>
-				<c:if test="${objectDeletionSuccessful == false }">
+				<c:if test="${objectDeleted == false }">
 					<h3>Something went wrong, and deletion was not successful.Return to the <a
-							href="home">homepage</a> to try again</h3>
+							href="home.do">homepage</a> to try again</h3>
 				</c:if>
 			</div>
 		</c:when>
 	</c:choose>
 
-	<a href="home">Return Home</a>
+	<a href="home.do">Return Home</a>
 </body>
 </html>
