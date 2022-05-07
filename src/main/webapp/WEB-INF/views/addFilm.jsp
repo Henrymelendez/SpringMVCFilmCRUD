@@ -9,39 +9,52 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
+<script type="text/javascript">
+
+
+</script>
+
+
+
 <title>Insert title here</title>
 </head>
 <body>
-<div class="d-flex justify-content-center">
-<form class="needs-validation col-lg-6" action="add.do" id="addFilm" method="POST" novalidate>
 
-<div class="form-row">
+<div class="container col-md-5">
+<div class="card">
+<div class= "card-body">
 
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Add Film Title</label>
+
+<form class="needs-validation " action="" id="addingObject" method="POST" novalidate>
+
+    <fieldset class="form-group">
+      <label for="validationTooltip01" class="form-label">Add Film Title</label>
       <input type="text" class="form-control" name="" id="validationTooltip01" placeholder="Title"  required>
-      <div class="invalid-tooltip">
+      <div class="invalid-feedback">
         Add a Title
       </div>
-    </div>
-    </div>
+    </fieldset>
+   
     
     
-    <div class="form-row">
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Film Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="" required></textarea>
-    <div class="invalid-tooltip">
+    <fieldset class="form-group">
+    
+    <label for="exampleFormControlTextarea1" class="form-label">Film Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" cols="col-md-5" name="" required></textarea>
+    <div class="invalid-feedback">
     	Add a Description
     </div>
-  </div>
+    <button class="btn btn-primary" type="submit">Submit Film</button>
+  </fieldset>
 	
-  </div>
+
     
     
     
     
 </form>
+</div>
+</div>
 </div>
 
 </body>
