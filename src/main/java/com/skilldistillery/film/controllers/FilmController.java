@@ -68,8 +68,8 @@ public class FilmController {
 //		if(filmUpdated) {
 //			System.out.println("The film updated!");
 //		}
-		redir.addFlashAttribute(film);
-		redir.addFlashAttribute(filmUpdated);
+		redir.addFlashAttribute("film", film);
+		redir.addFlashAttribute("filmUpdated", filmUpdated);
 		mv.setViewName("redirect:filmUpdated.do");
 		return mv;
 	}
