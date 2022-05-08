@@ -44,22 +44,74 @@ container {
 	width: 500px;
 	border: 1px solid black;
 	
+	
+
+
+}
+
+.column {
+	width: 300px;
+	float: left;
 	margin-right: 30px;
+}
+
+
+body {
+	border: 10px;
+	max-width: 700px;
+	width: 100%;
+	
+	
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	position: absolute;
+	right: 0;
+	left: 0;
+	top:0;
+	bottom:0;
+	margin: auto;
+
+
+}
+
+
+container {
+
+	width: 530px;
+	border: 1px solid black;
+	
+	margin-right: 10px;
 
 
 }
 
 .column {
 	float: left;
-	margin-right: 30px;
+	
 }
 
 button {
-	margin-top: 15px;
+	
 	
 
 }
+.row>* {
+	width: 45%;
 
+
+}
+
+
+.column2 {
+
+}
+
+h3 {
+padding: 0px;
+}
 
 
 </style>
@@ -101,7 +153,9 @@ button {
 						<option id="language" value="6">German</option>
 					</select> <input type="text" hidden="true" name="id" value="${film.id}">
 				</div>
-				<button type="submit">Submit</button>
+				<div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
 		</div>
 			</form>
 	</div>
