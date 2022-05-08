@@ -13,6 +13,59 @@
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+
+
+
+body {
+	border: 10px;
+	max-width: 700px;
+	width: 100%;
+	
+	
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	position: absolute;
+	right: 0;
+	left: 0;
+	top:0;
+	bottom:0;
+	margin: auto;
+
+
+}
+
+
+container {
+
+	width: 500px;
+	border: 1px solid black;
+	
+	margin-right: 30px;
+
+
+}
+
+.column {
+	float: left;
+	margin-right: 30px;
+}
+
+button {
+	margin-top: 15px;
+	
+
+}
+
+
+
+</style>
+
+
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -32,7 +85,7 @@
 						for="language" id="language">Language: </label>
 				</div>
 
-				<div class="column">
+				<div class="column2">
 					<input type="text" name="title" class="row"> <input
 						class="row" type="text" name="description"> <input
 						class="row" type="text" name="rating"> <input class="row"
