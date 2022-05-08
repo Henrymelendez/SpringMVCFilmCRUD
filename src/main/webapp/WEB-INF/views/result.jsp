@@ -11,7 +11,39 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
+<style type="text/css">
+body {
+
+
+
+	border: 10px;
+	max-width: 700px;
+	width: 100%;
+	
+	
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	position: absolute;
+	right: 0;
+	left: 0;
+	top:0;
+	bottom:0;
+	margin: auto;
+}
+.divider{
+    width:5px;
+    height:auto;
+    margin-bottom: 15px;
+    
+}
+
+</style>
+
 <title>Results</title>
 </head>
 <body>
@@ -47,19 +79,24 @@
 						
 						
 					
-
+						<div class="divider">
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
-							<button value=${film}">Update Film</button>
+							<button value=${film}" class="btn btn-primary">Update Film</button>
 						</form>
+						</div>
+						<div class="divider">
 						<form action="addActors.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
-							<button value=${film}">Change actors</button>
+							<button value=${film}" class="btn btn-primary">Change actors</button>
 						</form>
+						</div>
+						<div class="divider">
 						<form action="delete.do">
 							<input type="text" hidden="true" name="id" value="${film.id }">
-							<button value="${film}">Delete Film</button>
+							<button value="${film}" class="btn btn-primary">Delete Film</button>
 						</form>
+						</div>
 					</c:when>
 				</c:choose>
 				<c:if test="${empty film && empty films }">
@@ -75,7 +112,7 @@
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
 						<form action="update.do">
-							<button name="updateFilm">Update Film</button>
+							<button name="updateFilm"class="btn btn-primary" type="button">Update Film</button>
 						</form>
 					</c:when>
 					<c:when test="${! empty actor }">
