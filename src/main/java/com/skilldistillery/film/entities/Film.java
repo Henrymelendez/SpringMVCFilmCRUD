@@ -78,7 +78,7 @@ public class Film {
 		StringBuilder sb =  new StringBuilder();
 		sb.append("cast: ");
 		for (Actor actor : actor ) {
-			sb.append(actor + "\n");
+			sb.append(actor + ",\n");
 		}
 		return sb.toString();
 	}
