@@ -36,7 +36,19 @@
 							information</h3>
 					</c:when>
 					<c:when test="${! empty film }">
-						<p>${film}<br>${film.showDetails() }<br>${film.showActors()}</p>
+						<p>${film}
+						<table>
+						<c:forEach var="actor" items="${actor}">
+						<tr>
+						<td>actor.fisrtName</td>
+						<td>actor.lastName</td>
+						</tr>
+						
+						
+						</c:forEach>
+						</table>
+						
+						
 
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
