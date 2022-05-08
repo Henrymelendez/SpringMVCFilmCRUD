@@ -68,15 +68,12 @@ public class FilmController {
 //		if(filmUpdated) {
 //			System.out.println("The film updated!");
 //		}
-<<<<<<< HEAD
-		List<Actor> ac = film.getActor();
-		redir.addFlashAttribute("actor",ac);
+
 		
 		
-=======
 		redir.addFlashAttribute("film", film);
 		redir.addFlashAttribute("filmUpdated", filmUpdated);
->>>>>>> 8c438f1f364ba7e841c6e4dcad66bce644574048
+
 		mv.setViewName("redirect:filmUpdated.do");
 		return mv;
 	}

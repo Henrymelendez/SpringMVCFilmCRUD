@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+   <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -36,19 +36,7 @@
 							information</h3>
 					</c:when>
 					<c:when test="${! empty film }">
-						<p>${film}
-						<table>
-						<c:forEach var="actor" items="${actor}">
-						<tr>
-						<td>actor.fisrtName</td>
-						<td>actor.lastName</td>
-						</tr>
-						
-						
-						</c:forEach>
-						</table>
-						
-						
+						<p>${film}<br>${film.showDetails() }<br>${film.showActors()}</p>
 
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
