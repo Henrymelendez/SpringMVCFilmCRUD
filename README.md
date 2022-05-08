@@ -2,7 +2,7 @@
 
 ## Description
 
-This program allows a user to search for film records by an Id or keyword from a database. Additionally, a user may add, update, and delete films from a database.
+An Application allows a user to search for film records by an Id or keyword from a database. Additionally, a user may add, update, and delete films from a database.
 
 
 
@@ -20,4 +20,14 @@ This program allows a user to search for film records by an Id or keyword from a
 * Github
 * CSS
 * Tomcat Server
-* 
+
+
+## Team Members 
+
+* Charlie
+* Kate
+* Henry
+
+
+## Lessons Learned
+

@@ -22,7 +22,8 @@ body {
 	max-width: 700px;
 	width: 100%;
 	
-	
+	background-image: url("https://images.cdn3.stockunlimited.net/preview1300/cinema-background-with-movie-objects_1823381.jpg");
+	color:white;
 	height: 50vh;
 	display: flex;
 	align-items: center;
@@ -123,7 +124,6 @@ padding: 0px;
 <body>
 	<div class="container">
 				<h3 class="justify-content-center" >Editing film with ID: ${film.id}</h3>
-				<a href="home.do">Return Home</a>
 			<form name="updateFilm" action="updateFilm.do" method="post">
 		<div class="row ">
 
@@ -154,6 +154,7 @@ padding: 0px;
 				</div>
 		</div>
 			<div>
+				<a class="button" href="home.do">Return Home</a>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
 		</form>

@@ -17,7 +17,7 @@
 body {
 
 
-
+	background-image: url("https://images.cdn3.stockunlimited.net/preview1300/cinema-background-with-movie-objects_1823381.jpg");
 	border: 10px;
 	max-width: 700px;
 	width: 100%;
@@ -44,7 +44,17 @@ body {
 
 dl {
 	margin-bottom: 15px;
+	
+	
 
+}
+
+dd, dt {
+	color: white;
+}
+
+h3, h1 {
+	color: white;
 }
 
 </style>
@@ -173,6 +183,6 @@ dl {
 		</c:when>
 	</c:choose>
 
-	<a href="home.do">Return Home</a>
+	<a  class="btn btn-primary" href="home.do">Return Home</a>
 </body>
 </html>
