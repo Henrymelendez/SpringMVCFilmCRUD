@@ -109,8 +109,8 @@ public class Film {
 	public int getReleaseYear() {
 		return releaseYear;
 	}
-	public void setReleaseYear(int releaseYear) {
-		this.releaseYear = releaseYear;
+	public void setReleaseYear(String releaseYear) {
+		this.releaseYear = Integer.parseInt(releaseYear);
 	}
 	public int getLanguageId() {
 		return languageId;
@@ -119,8 +119,8 @@ public class Film {
 	public int getRentalDuration() {
 		return rentalDuration;
 	}
-	public void setRentalDuration(int rentalDuration) {
-		this.rentalDuration = rentalDuration;
+	public void setRentalDuration(double rentalDuration) {
+		this.rentalDuration = (int) Math.round(rentalDuration);
 	}
 	public double getRentalRate() {
 		return rentalRate;

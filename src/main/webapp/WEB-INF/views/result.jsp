@@ -112,7 +112,7 @@
 					<c:when test="${filmUpdated == true}">
 						<h3>The following film has been successfully updated to the
 							database: </h3>
-							<h3>${film.title} ${film.id }</h3>
+							<h3>${film.title}, id: ${film.id }</h3>
 					</c:when>
 					<c:when test="${actorUpdated == true }">
 						<h3>The following actor has been successfully added to the
