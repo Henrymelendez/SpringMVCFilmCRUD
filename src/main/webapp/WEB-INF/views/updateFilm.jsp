@@ -18,8 +18,8 @@
 </head>
 <body>
 	<div class="container">
-		<div class="row ">
 			<form name="updateFilm" action="updateFilm.do" method="post">
+		<div class="row ">
 				<a href="home.do">Return Home</a>
 
 				<h3>Editing film with ID: ${film.id}</h3>
@@ -49,8 +49,8 @@
 					</select> <input type="text" hidden="true" name="id" value="${film.id}">
 				</div>
 				<button type="submit">Submit</button>
-			</form>
 		</div>
+			</form>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

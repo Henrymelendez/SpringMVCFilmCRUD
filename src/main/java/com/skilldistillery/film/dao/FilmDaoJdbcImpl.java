@@ -151,22 +151,22 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		String filmQuery = "Select film.* FROM film JOIN film_actor ON film.id = film_actor.film_id JOIN actor ON actor.id = film_actor.actor_id WHERE actor.id = ?";
 		String sql = "SELECT * FROM actor WHERE actor.id = ?";
 		try (Connection conn = DriverManager.getConnection(URL, user, pw);
-				PreparedStatement actorPst = conn.prepareStatement(filmQuery);
+				PreparedStatement filmPst = conn.prepareStatement(filmQuery);
 				PreparedStatement pst = conn.prepareStatement(sql);) {
 			pst.setInt(1, actorId);
 			rs = pst.executeQuery();
 			if (rs.next()) {
 				actor = new Actor(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"));
-//				actor.setFilms(findFilmsByActorId(actorId));
 				List<Film> actorFilms = new ArrayList<>();
-				actorPst.setInt(1, actorId);
-				rs = actorPst.executeQuery();
+				filmPst.setInt(1, actorId);
+				rs = filmPst.executeQuery();
 				while (rs.next()) {
 					actorFilms.add(new Film(rs.getInt("id"), rs.getString("title"), rs.getString("description"),
 							rs.getInt("release_year"), rs.getInt("language_id"), rs.getInt("rental_duration"),
 							rs.getDouble("rental_rate"), rs.getInt("length"), rs.getDouble("replacement_cost"),
 							rs.getString("rating"), rs.getString("special_features")));
 				}
+				actor.setFilms(actorFilms);
 			}
 
 			rs.close();

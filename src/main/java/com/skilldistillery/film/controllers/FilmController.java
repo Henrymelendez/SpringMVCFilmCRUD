@@ -1,6 +1,7 @@
 package com.skilldistillery.film.controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.film.dao.FilmDAO;
+import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
@@ -113,6 +115,17 @@ public class FilmController {
 		mv.addObject("usingLookup", true);
 
 		mv.addObject("film", film);
+		mv.setViewName("result");
+		return mv;
+	}
+	@RequestMapping(path ="lookup.do", params = "actorId",  method = RequestMethod.GET)
+	
+	public ModelAndView FindByActorId(int actorId) {
+		ModelAndView mv = new ModelAndView();
+		Actor actor = filmDao.findActorById(actorId);
+		List<Film> films = actor.getFilms();
+		mv.addObject("films", films);
+		mv.addObject("usingLookup", true);
 		mv.setViewName("result");
 		return mv;
 	}
