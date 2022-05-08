@@ -58,25 +58,30 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 		}
 	
-	public void showDetails() {
-		System.out.println(this.title + ":");
-		System.out.println(this.description);
-//		System.out.println("Category: " + this.category);
-		System.out.println("Release Year: " + this.releaseYear +", Rating: " + this.rating + ", Language: " +this.language);
-		System.out.println("Film Length: " + this.length + " mins");
-		System.out.println("Special Features: " + this.specialFeatures);
-		System.out.println("Rental rate: " + this.rentalRate + ", Replacement Cost: " + this.replacementCost + ", Rental Duration: " + this.rentalDuration );
-//		System.out.println("The following copies are in inventory: ");
+	public String showDetails() {
+		StringBuilder sb =  new StringBuilder();
+		
+		sb.append(this.title + ":");
+		sb.append(this.description + "\n");
+		sb.append(" Category: " + this.category + "\n");
+		sb.append(" Release Year: " + this.releaseYear +", Rating: " + this.rating + ", Language: " +this.language + "\n");
+		sb.append(" Film Length: " + this.length + " mins"+ "\n");
+		sb.append(" Special Features: " + this.specialFeatures+ "\n");
+		sb.append(" Rental rate: " + this.rentalRate + ", Replacement Cost: " + this.replacementCost + ", Rental Duration: " + this.rentalDuration+ "\n" );
+//		sb.append("The following copies are in inventory: ");
 //		for (String inventoryItem : inventory) {
-//			System.out.println(inventoryItem);
+//			sb.append(inventoryItem + "\n");
 //		}
+		return sb.toString();
 	}
-//	public void showActors() {
-//		System.out.println("caste: ");
-//		for (Actor actor : actor) {
-//			System.out.println(actor);
-//		}
-//	}
+	public String showActors() {
+		StringBuilder sb =  new StringBuilder();
+		sb.append("caste: ");
+		for (Actor actor : actor ) {
+			sb.append(actor + "\n");
+		}
+		return sb.toString();
+	}
 
 	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
@@ -177,7 +182,7 @@ public class Film {
 	@Override
 	public String toString() {
 		return "Film Title: " + title + " Year Released: " + releaseYear + " Rating: " + 
-				rating +" Description" + description + " Language: " + language;
+				rating +" Description: " + description + " Language: " + language;
 			
 	}
 	

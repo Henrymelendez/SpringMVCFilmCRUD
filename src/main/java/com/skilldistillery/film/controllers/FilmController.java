@@ -1,6 +1,9 @@
 package com.skilldistillery.film.controllers;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -86,7 +89,6 @@ public class FilmController {
 	public ModelAndView addFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		film = filmDao.createFilm(film);
-		mv.addObject("usingLookup", true);
 		redir.addFlashAttribute("film", film);
 
 		mv.setViewName("redirect:filmAdded.do");
@@ -131,4 +133,23 @@ public class FilmController {
 		return mv;
 	}
 
+	@RequestMapping(path="addActors.do", method= RequestMethod.GET)
+	public ModelAndView addActorsForm(@RequestParam("filmId") int filmId ) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("filmId", filmId);
+		mv.addObject("allActors", filmDao.listActors());
+		mv.setViewName("addActors");
+		
+		return mv;
+	}
+	@RequestMapping(path="addActors.do", method = RequestMethod.POST)
+	public ModelAndView addActors(@RequestParam("filmId") int filmId ) {
+		ModelAndView mv = new ModelAndView();
+		
+		
+		
+		
+		return mv;
+	}
+	
 }

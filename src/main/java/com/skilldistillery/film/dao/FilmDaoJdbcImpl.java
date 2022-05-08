@@ -72,7 +72,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				catPst.setInt(1, filmId);
 				rs = catPst.executeQuery();
 				if (rs.next()) {
-//					film.setCategory(rs.getString("category.name"));
+					film.setCategory(rs.getString("category.name"));
 				}
 
 			}
@@ -120,7 +120,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				catPst.setInt(1, film.getId());
 				resultPlus = catPst.executeQuery();
 				if (resultPlus.next()) {
-//					film.setCategory(resultPlus.getNString("category.name"));
+					film.setCategory(resultPlus.getNString("category.name"));
 				}
 				List<String> inventory = new ArrayList<>();
 				inventoryPst.setInt(1, film.getId());
@@ -426,6 +426,41 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			sqle.printStackTrace();
 		}
 		return allActors;
+	}
+
+	public boolean changeActors(int filmId, int[] actorIds) {
+		Connection conn = null;
+		try {
+			conn = DriverManager.getConnection(URL, user, pw);
+			conn.setAutoCommit(false); // START TRANSACTION
+//				 Replace actor's film list
+			String sql = "DELETE FROM film_actor WHERE film_id = ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, filmId);
+			int updateCount = stmt.executeUpdate();
+			updateCount = stmt.executeUpdate();
+			sql = "INSERT INTO film_actor (film_id, actor_id) VALUES (?,?)";
+			stmt = conn.prepareStatement(sql);
+			for(int actorId : actorIds) {
+				stmt.setInt(1, filmId);
+				stmt.setInt(2, actorId);
+				updateCount = stmt.executeUpdate();
+				
+			}
+			conn.commit(); // COMMIT TRANSACTION
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+			if (conn != null) {
+				try {
+					conn.rollback();
+				} // ROLLBACK TRANSACTION ON ERROR
+				catch (SQLException sqle2) {
+					System.err.println("Error trying to rollback");
+				}
+			}
+			return false;
+		}
+		return true;
 	}
 
 }

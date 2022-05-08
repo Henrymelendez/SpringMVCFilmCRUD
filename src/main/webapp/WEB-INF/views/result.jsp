@@ -36,11 +36,15 @@
 							information</h3>
 					</c:when>
 					<c:when test="${! empty film }">
-						<p>${film}</p>
+						<p>${film}<br>${film.showDetails() }<br>${film.showActors()}</p>
 
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
 							<button value=${film}">Update Film</button>
+						</form>
+						<form action="addActors.do" method="get">
+							<input type="text" hidden="true" name="filmId" value="${film.id}">
+							<button value=${film}">Change actors</button>
 						</form>
 						<form action="delete.do">
 							<input type="text" hidden="true" name="id" value="${film.id }">
@@ -84,8 +88,8 @@
 				</c:if>
 				<c:if test="${objectDeleted == false }">
 					<h3>
-						Something went wrong, and deletion was not successful.Return to
-						the <a href="home.do">homepage</a> to try again
+						Something went wrong and the deletion was not successful. Return to
+						the <a href="home.do">homepage</a> to try again.
 					</h3>
 				</c:if>
 			</div>

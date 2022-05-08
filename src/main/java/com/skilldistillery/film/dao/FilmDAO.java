@@ -16,5 +16,6 @@ public interface FilmDAO {
 	  public boolean updateFilm(Film film);
 	  public boolean updateActor(Actor actor);
 	  public List<Actor> listActors();
+	  public boolean changeActors(int filmId, int[] actorIds);
 
 }
