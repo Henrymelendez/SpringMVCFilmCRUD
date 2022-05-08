@@ -113,7 +113,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film film = filmDao.findFilmById(filmId);
 		mv.addObject("usingLookup", true);
-
+		mv.addObject("actors", film.getActor());
 		mv.addObject("film", film);
 		mv.setViewName("result");
 		return mv;

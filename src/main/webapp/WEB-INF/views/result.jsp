@@ -74,7 +74,11 @@ body {
 						<dt> Film Details</dt>
 						<dd>${film.showDetails() }</dd>
 						<dt>Film Actors:</dt>
-						<dd>${film.showActors() }</dd>
+						<c:forEach var="actor" items="${actors }">
+						<dd>
+						${actor}
+						</dd>
+						</c:forEach>
 						</dl>
 						
 						

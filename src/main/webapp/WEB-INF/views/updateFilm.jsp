@@ -90,7 +90,6 @@ container {
 
 .column {
 	float: left;
-	
 }
 
 button {
@@ -100,7 +99,7 @@ button {
 }
 .row>* {
 	width: 45%;
-
+	height: 10%;
 
 }
 
@@ -123,28 +122,28 @@ padding: 0px;
 </head>
 <body>
 	<div class="container">
+				<h3 class="justify-content-center" >Editing film with ID: ${film.id}</h3>
+				<a href="home.do">Return Home</a>
 			<form name="updateFilm" action="updateFilm.do" method="post">
 		<div class="row ">
-				<a href="home.do">Return Home</a>
 
-				<h3>Editing film with ID: ${film.id}</h3>
-				<div class="column">
-					<label class="row"> Title: </label> <label class="row">
-						Description: </label> <label class="row"> Rating: </label> <label
-						class="row"> Rental Duration: </label> <label class="row">
-						Length: </label> <label class="row">Replacement Cost: </label> <label
-						class="row"> Special Features: </label> <label class="row"
+				<div class=" d-flex flex-column h-100" >
+					<label class="d-flex flex-row h-10"> Title: </label> <label class="d-flex flex-row h-10">
+						Description: </label> <label class="d-flex flex-row h-10"> Rating: </label> <label
+						class="d-flex flex-row h-10"> Rental Duration: </label> <label class="d-flex flex-row h-10">
+						Length: </label> <label class="d-flex flex-row h-10">Replacement Cost: </label> <label
+						class="d-flex flex-row"> Special Features: </label> <label class="d-flex flex-row h-10"
 						for="language" id="language">Language: </label>
 				</div>
 
-				<div class="column2">
-					<input type="text" name="title" class="row"> <input
-						class="row" type="text" name="description"> <input
-						class="row" type="text" name="rating"> <input class="row"
-						type="text" name="rentalDuration"> <input class="row"
-						type="text" name="length"> <input class="row" type="text"
-						name="replacementCost"> <input class="row" type="text"
-						name="specialFeatures"> <select class="row"
+				<div class="d-flex flex-column h-100">
+					<input type="text" name="title" class="d-flex flex-row h-10"> <input
+						class="d-flex flex-row h-10" type="text" name="description"> <input
+						class="d-flex flex-row h-10" type="text" name="rating"> <input class="d-flex flex-row h-10"
+						type="text" name="rentalDuration h-10"> <input class="d-flex flex-row h-10"
+						type="text" name="length"> <input class="d-flex flex-row h-10" type="text"
+						name="replacementCost"> <input class="d-flex flex-row h-10" type="text"
+						name="specialFeatures"> <select class="d-flex flex-row h-10"
 						name="languageId">
 						<option id="language" value="1">English</option>
 						<option id="language" value="2">Italian</option>
@@ -153,11 +152,11 @@ padding: 0px;
 						<option id="language" value="6">German</option>
 					</select> <input type="text" hidden="true" name="id" value="${film.id}">
 				</div>
-				<div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-				</div>
 		</div>
-			</form>
+			<div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
