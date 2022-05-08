@@ -101,6 +101,7 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 				PreparedStatement actorPst = conn.prepareStatement(actorQuery);) {
 			pst.setNString(1, query);
 			pst.setNString(2, query);
+		
 			rs = pst.executeQuery();
 			while (rs.next()) {
 				Film film = new Film(rs.getInt("id"), rs.getString("title"), rs.getString("description"),
