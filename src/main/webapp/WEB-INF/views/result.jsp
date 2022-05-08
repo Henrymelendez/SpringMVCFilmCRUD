@@ -36,7 +36,17 @@
 							information</h3>
 					</c:when>
 					<c:when test="${! empty film }">
-						<p>${film}<br>${film.showDetails() }<br>${film.showActors()}</p>
+						<h1><p>Details on: ${film.title }</p></h1>
+						
+						<dl>
+						<dt> Film Details</dt>
+						<dd>${film.showDetails() }</dd>
+						<dt>Film Actors:</dt>
+						<dd>${film.showActors() }</dd>
+						</dl>
+						
+						
+					
 
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">

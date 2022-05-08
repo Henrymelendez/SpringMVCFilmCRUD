@@ -61,7 +61,7 @@ public class Film {
 	public String showDetails() {
 		StringBuilder sb =  new StringBuilder();
 		
-		sb.append(this.title + ":");
+		sb.append(this.title + ": ");
 		sb.append(this.description + "\n");
 		sb.append(" Category: " + this.category + "\n");
 		sb.append(" Release Year: " + this.releaseYear +", Rating: " + this.rating + ", Language: " +this.language + "\n");
@@ -76,7 +76,7 @@ public class Film {
 	}
 	public String showActors() {
 		StringBuilder sb =  new StringBuilder();
-		sb.append("caste: ");
+		sb.append("cast: ");
 		for (Actor actor : actor ) {
 			sb.append(actor + "\n");
 		}
