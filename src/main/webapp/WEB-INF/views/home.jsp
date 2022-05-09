@@ -126,7 +126,7 @@ section {
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="inputName" class="form-label">Please Enter a
-									Actor Id</label> <input type="text" class="form-control" name="actorId" />
+									Actor Id</label> <input type="text" class="form-control" name="actorId" required="required" />
 								<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
 						</div>
@@ -141,7 +141,7 @@ section {
 								<div class="form-group">
 									<label for="inputName" class="form-label">Please Enter
 										a Film id</label> <input type="text" class="form-control"
-										name="filmId"></input>
+										name="filmId" required="required"></input>
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
 							</div>
@@ -156,7 +156,7 @@ section {
 							<div class="modal-body">
 								<div class="form-group">
 									<label for="inputName" class="form-label">Find Film by
-										key word</label> <input type="text" class="form-control" name="query"></input>
+										key word</label> <input type="text" class="form-control" name="query" ></input>
 									<button type="submit" class="btn btn-primary">Submit</button>
 								</div>
 							</div>
@@ -218,7 +218,7 @@ section {
 						<div class="modal-body">
 							<div class="form-group">
 								<label for="inputName" class="form-label">Title</label> <input
-									type="text" class="form-control" name="title" />
+									type="text" class="form-control" name="title" required="required"/>
 							</div>
 						</div>
 

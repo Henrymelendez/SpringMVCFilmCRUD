@@ -17,7 +17,7 @@
 body {
 
 
-
+	background-image: url("https://images.cdn3.stockunlimited.net/preview1300/cinema-background-with-movie-objects_1823381.jpg");
 	border: 10px;
 	max-width: 700px;
 	width: 100%;
@@ -40,6 +40,21 @@ body {
     height:auto;
     margin-bottom: 15px;
     
+}
+
+dl {
+	margin-bottom: 15px;
+	
+	
+
+}
+
+dd, dt {
+	color: white;
+}
+
+h3, h1, h2 {
+	color: white;
 }
 
 </style>
@@ -74,7 +89,7 @@ body {
 						<dt> Film Details</dt>
 						<dd>${film.showDetails() }</dd>
 						<dt>Film Actors:</dt>
-						<c:forEach var="actor" items="${actors }">
+						<c:forEach var="actor" items="${actors}">
 						<dd>
 						${actor}
 						</dd>
@@ -162,6 +177,6 @@ body {
 		</c:when>
 	</c:choose>
 
-	<a href="home.do">Return Home</a>
+	<a  class="btn btn-primary" href="home.do">Return Home</a>
 </body>
 </html>
