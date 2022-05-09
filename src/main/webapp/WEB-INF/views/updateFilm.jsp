@@ -133,30 +133,7 @@ margin-top: 10px;
 </head>
 <body>
 	<div class="container">
-<<<<<<< HEAD
-				<h3 class="justify-content-center title" >Editing film with ID: ${film.id}</h3>
-			<form name="updateFilm" action="updateFilm.do" method="post">
-		<div class="row ">
 
-				<div class=" d-flex flex-column h-100 one" >
-					<label class="d-flex flex-row h-10" for="title"> Title: </label> <label class="d-flex flex-row h-10" for="description">
-						Description: </label> <label class="d-flex flex-row h-10" for="rating"> Rating: </label> <label
-						class="d-flex flex-row h-10" for="rentalDuration"> Rental Duration: </label> <label class="d-flex flex-row h-10" for="length">
-						Length: </label> <label class="d-flex flex-row h-10" for="replacementCost">Replacement Cost: </label> <label
-						class="d-flex flex-row" for="specialFeatures"> Special Features: </label> <label class="d-flex flex-row h-10"
-						for="language" id="language">Language: </label>
-				</div>
-
-				<div class="d-flex flex-column h-100">
-					<input type="text" name="title" class="d-flex flex-row h-10" id="title"> <input
-						class="d-flex flex-row h-10" type="text" name="description" id="description"> <input
-						class="d-flex flex-row h-10" type="text" name="rating" id="rating"> <input class="d-flex flex-row h-10"
-						type="text" name="rentalDuration h-10" id="rentalDuration"> <input class="d-flex flex-row h-10"
-						type="text" name="length" id="length"> <input class="d-flex flex-row h-10" type="text"
-						name="replacementCost" id="replacementCost"> <input class="d-flex flex-row h-10" type="text"
-						name="specialFeatures" id="specialFeatures"> <select class="d-flex flex-row h-10"
-						name="languageId" for="languageId">
-=======
 		<h3 class="justify-content-center">Editing film with ID:
 			${film.id}</h3>
 		<form name="updateFilm" action="updateFilm.do" method="post">
@@ -243,19 +220,15 @@ margin-top: 10px;
 						<option id="language" value="6">German</option>
 					</select>
 				</div>
-<<<<<<< HEAD
+
 		</div>
 			<div class="buttons">
 				<a class="button" href="home.do">Return Home</a>
 				<button type="submit" class="btn btn-primary">Submit</button>
-=======
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 			</div>
 		</form>
-	<div>
-		<a class="button" href="home.do">Return Home</a>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</div>
+
 	</div>
 	</div>
 	</form>
