@@ -151,7 +151,7 @@ h3, h1, h2 {
 				<c:if test="${objectDeleted == false }">
 					<h3>
 						Something went wrong and the deletion was not successful. Return to
-						the <a href="home.do">homepage</a> to try again.
+						the <a href="home.do" class="btn btn-primary">homepage</a> to try again.
 					</h3>
 				</c:if>
 			</div>
@@ -171,7 +171,7 @@ h3, h1, h2 {
 				</c:choose>
 				<c:if test="${filmUpdated == false || actorUpdated == false }">
 					<h3>
-						Update failed return to <a href="home.do">homepage</a> to try
+						Update failed return to <a href="home.do" class="btn btn-primary">homepage</a> to try
 						again.
 					</h3>
 				</c:if>
@@ -179,6 +179,6 @@ h3, h1, h2 {
 		</c:when>
 	</c:choose>
 
-	<a  class="btn btn-primary" href="home.do">Return Home</a>
+	<a  class="btn btn-primary" href="home.do" class="btn btn-primary">Return Home</a>
 </body>
 </html>

@@ -63,28 +63,24 @@ body {
 container {
 	width: 530px;
 	border: 1px solid black;
-<<<<<<< HEAD
 	
 		
 
-=======
 	margin-right: 10px;
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 }
 
 .column {
 	float: left;
 }
 
-<<<<<<< HEAD
+
 .title {
 margin-bottom: 20px;	
 	
 
-=======
 button {
-	
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 }
 
 .row>* {
@@ -99,20 +95,20 @@ button {
 	margin-top: 300px;
 	
 	bottom: 20px;
-=======
+
 	width: 45%;
 	height: 10%;
 }
 
 .column2 {
 	
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 }
 
 h3 {
 	padding: 0px;
 }
-<<<<<<< HEAD
+
 
 .one {
 margin-top: 10px;
@@ -122,8 +118,7 @@ margin-top: 10px;
 	margin-top: 15px;
 }
 
-=======
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 </style>
 
 
@@ -212,7 +207,7 @@ margin-top: 10px;
 				</div>
 				<div class="d-flex flex-column">
 					<select class="d-flex flex-row h-10" name="languageId">
->>>>>>> c5f931b026b25499389df6763e6142ababfa8a0b
+
 						<option id="language" value="1">English</option>
 						<option id="language" value="2">Italian</option>
 						<option id="language" value="4">Mandarin</option>
@@ -223,7 +218,7 @@ margin-top: 10px;
 
 		</div>
 			<div class="buttons">
-				<a class="button" href="home.do">Return Home</a>
+				<a  href="home.do" class="btn btn-primary">Return Home</a>
 				<button type="submit" class="btn btn-primary">Submit</button>
 
 			</div>
