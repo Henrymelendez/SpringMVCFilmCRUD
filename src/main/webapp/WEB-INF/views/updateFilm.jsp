@@ -51,7 +51,7 @@ container {
 }
 
 .column {
-	width: 300px;
+	width: 30px;
 	float: left;
 	margin-right: 30px;
 }
@@ -84,8 +84,7 @@ container {
 	width: 530px;
 	border: 1px solid black;
 	
-	margin-right: 10px;
-
+		
 
 }
 
@@ -93,26 +92,35 @@ container {
 	float: left;
 }
 
-button {
-	
+.title {
+margin-bottom: 20px;	
 	
 
 }
 .row>* {
-	width: 45%;
-	height: 10%;
-
+	width: 30%;
+	
+	
 }
 
 
-.column2 {
-
+.column {
+	margin-top: 300px;
+	
+	bottom: 20px;
 }
 
 h3 {
 padding: 0px;
 }
 
+.one {
+margin-top: 10px;
+}
+
+.buttons {
+	margin-top: 15px;
+}
 
 </style>
 
@@ -123,28 +131,28 @@ padding: 0px;
 </head>
 <body>
 	<div class="container">
-				<h3 class="justify-content-center" >Editing film with ID: ${film.id}</h3>
+				<h3 class="justify-content-center title" >Editing film with ID: ${film.id}</h3>
 			<form name="updateFilm" action="updateFilm.do" method="post">
 		<div class="row ">
 
-				<div class=" d-flex flex-column h-100" >
-					<label class="d-flex flex-row h-10"> Title: </label> <label class="d-flex flex-row h-10">
-						Description: </label> <label class="d-flex flex-row h-10"> Rating: </label> <label
-						class="d-flex flex-row h-10"> Rental Duration: </label> <label class="d-flex flex-row h-10">
-						Length: </label> <label class="d-flex flex-row h-10">Replacement Cost: </label> <label
-						class="d-flex flex-row"> Special Features: </label> <label class="d-flex flex-row h-10"
+				<div class=" d-flex flex-column h-100 one" >
+					<label class="d-flex flex-row h-10" for="title"> Title: </label> <label class="d-flex flex-row h-10" for="description">
+						Description: </label> <label class="d-flex flex-row h-10" for="rating"> Rating: </label> <label
+						class="d-flex flex-row h-10" for="rentalDuration"> Rental Duration: </label> <label class="d-flex flex-row h-10" for="length">
+						Length: </label> <label class="d-flex flex-row h-10" for="replacementCost">Replacement Cost: </label> <label
+						class="d-flex flex-row" for="specialFeatures"> Special Features: </label> <label class="d-flex flex-row h-10"
 						for="language" id="language">Language: </label>
 				</div>
 
 				<div class="d-flex flex-column h-100">
-					<input type="text" name="title" class="d-flex flex-row h-10"> <input
-						class="d-flex flex-row h-10" type="text" name="description"> <input
-						class="d-flex flex-row h-10" type="text" name="rating"> <input class="d-flex flex-row h-10"
-						type="text" name="rentalDuration h-10"> <input class="d-flex flex-row h-10"
-						type="text" name="length"> <input class="d-flex flex-row h-10" type="text"
-						name="replacementCost"> <input class="d-flex flex-row h-10" type="text"
-						name="specialFeatures"> <select class="d-flex flex-row h-10"
-						name="languageId">
+					<input type="text" name="title" class="d-flex flex-row h-10" id="title"> <input
+						class="d-flex flex-row h-10" type="text" name="description" id="description"> <input
+						class="d-flex flex-row h-10" type="text" name="rating" id="rating"> <input class="d-flex flex-row h-10"
+						type="text" name="rentalDuration h-10" id="rentalDuration"> <input class="d-flex flex-row h-10"
+						type="text" name="length" id="length"> <input class="d-flex flex-row h-10" type="text"
+						name="replacementCost" id="replacementCost"> <input class="d-flex flex-row h-10" type="text"
+						name="specialFeatures" id="specialFeatures"> <select class="d-flex flex-row h-10"
+						name="languageId" for="languageId">
 						<option id="language" value="1">English</option>
 						<option id="language" value="2">Italian</option>
 						<option id="language" value="4">Mandarin</option>
@@ -153,7 +161,7 @@ padding: 0px;
 					</select> <input type="text" hidden="true" name="id" value="${film.id}">
 				</div>
 		</div>
-			<div>
+			<div class="buttons">
 				<a class="button" href="home.do">Return Home</a>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
