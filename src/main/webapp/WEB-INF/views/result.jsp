@@ -105,12 +105,6 @@ h3, h1, h2 {
 						</form>
 						</div>
 						<div class="divider">
-						<form action="addActors.do" method="get">
-							<input type="text" hidden="true" name="filmId" value="${film.id}">
-							<button value=${film}" class="btn btn-primary">Change actors</button>
-						</form>
-						</div>
-						<div class="divider">
 						<form action="delete.do">
 							<input type="text" hidden="true" name="id" value="${film.id }">
 							<button value="${film}" class="btn btn-primary">Delete Film</button>
