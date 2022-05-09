@@ -2,7 +2,9 @@
 
 ## Description
 
-An Application allows a user to search for film records by an Id or keyword from a database. Additionally, a user may add, update, and delete films from a database.
+The MVC Film CRUD Application project is our first group homework assignment. Three of us worked together to complete the following program. 
+
+An Application that implements full web-based C.R.U.D functionality using Spring MVC and the DAO patter. The DAO implementation uses JDBC to persist and retrieve data. The user is able to search for film records by an film Id or a keyword (either from the title or film description) from a database. Additionally, a user may add, update, and delete films from a database and see those changes reflected immediately. 
 
 
 
@@ -70,9 +72,10 @@ now download and Install tomcat and the project and run as server
 
 ## Team Members 
 
-* Charlie
+
 * Kate
 * Henry
+* Charli
 
 
 ## Lessons Learned
