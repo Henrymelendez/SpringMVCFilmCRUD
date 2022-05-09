@@ -60,12 +60,6 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		
 		boolean filmUpdated = filmDao.updateFilm(film);
-//		if(filmUpdated) {
-//			System.out.println("The film updated!");
-//		}
-
-		
-		
 		redir.addFlashAttribute("film", film);
 		redir.addFlashAttribute("filmUpdated", filmUpdated);
 
