@@ -22,9 +22,50 @@ An Application allows a user to search for film records by an Id or keyword from
 * Tomcat Server
 
 
-## Installation 
+## Installation
 
-I
+##### Technology needed 
+- Unix based terminal 
+- Spring Tool Suite
+- Tomcat
+- MAMP base not pro
+
+
+Use Mysql database server [MAMP](https://www.mamp.info) to install MAMP basic not pro
+
+next set up your zhrc files in your text editor 
+
+```bash 
+atom .zhrc 
+```
+Next set up your cnf file
+ 
+```bash 
+atom /etc/my.cnf
+```
+
+after your setup go to preferences and un check everything but start server in the general tab
+and in the ports tab set the ports to 8080 & 3306 once finished restart your MAMP server.
+
+
+Next log into Mysql:  
+
+~~~~Mysql
+
+$> mysql -u root -p
+~~~~
+
+Setup and use the Sakila Database with the following command:
+
+```bash
+mysql> SOURCE C:/temp/sakila-db/sakila-schema.sql;
+mysql> SOURCE C:/temp/sakila-db/sakila-data.sql;
+mysql> USE sakila;
+```
+
+now download and Install tomcat and the project and run as server 
+
+
 
 
 ## Team Members 
