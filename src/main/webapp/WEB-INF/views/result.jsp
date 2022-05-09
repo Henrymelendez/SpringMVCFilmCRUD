@@ -53,7 +53,7 @@ dd, dt {
 	color: white;
 }
 
-h3, h1 {
+h3, h1, h2 {
 	color: white;
 }
 
