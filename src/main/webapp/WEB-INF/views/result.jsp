@@ -101,7 +101,7 @@ h3, h1, h2 {
 						<div class="divider">
 						<form action="updateFilm.do" method="get">
 							<input type="text" hidden="true" name="filmId" value="${film.id}">
-							<button value=${film}" class="btn btn-primary">Update Film</button>
+							<button value="${film}" class="btn btn-primary">Update Film</button>
 						</form>
 						</div>
 						<div class="divider">
@@ -124,9 +124,11 @@ h3, h1, h2 {
 					<c:when test="${! empty film}">
 						<h3>The following film has been successfully added to the
 							database: ${film.title}, id: ${film.id }</h3>
-						<form action="update.do">
-							<button name="updateFilm"class="btn btn-primary" type="button">Update Film</button>
+						<form action="updateFilm.do" method="get">
+							<input type="text" hidden="true" name="filmId" value="${film.id}">
+							<button value="${film}" class="btn btn-primary">Update Film</button>
 						</form>
+
 					</c:when>
 					<c:when test="${! empty actor }">
 						<h3>The following actor has been successfully added to the
